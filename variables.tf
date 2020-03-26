@@ -321,6 +321,12 @@ variable "instance_availability_zone" {
   description = "Optional parameter to place cluster instances in a specific availability zone. If left empty, will place randomly"
 }
 
+variable "availability_zones" {
+  type        = list(string)
+  description = "A list of EC2 Availability Zones for the DB cluster storage where DB cluster instances can be created"
+  default     = []
+}
+
 variable "cluster_dns_name" {
   type        = string
   description = "Name of the cluster CNAME record to create in the parent DNS zone specified by `zone_id`. If left empty, the name will be auto-asigned using the format `master.var.name`"
